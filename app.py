@@ -243,7 +243,7 @@ def update_prediction(*args):
         prediction = round(model.predict(input_encoded)[0], 2)
         pred_results = model.get_prediction(input_encoded)
         pred_ci = pred_results.conf_int(alpha=0.05)
-        return '', f'Projected monthly income: €{prediction}, with potential earnings ranging from €{round(pred_ci[0][0],2)}to €{round(pred_ci[0][1],2)}.'
+        return '', f'Projected monthly income: €{prediction}, with potential earnings ranging from €{round(pred_ci[0][0],2)} to €{round(pred_ci[0][1],2)}.'
 
     return '', ''
 
